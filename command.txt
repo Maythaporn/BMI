@@ -1,0 +1,5 @@
+az acr create --resource-group %RESOURCE_GROUP% --location %LOCATION% --name %REGISTRY_NAME% --admin-enabled --sku Basic --public-network-enabled true
+az acr show --name %REGISTRY_NAME% --resource-group %RESOURCE_GROUP%
+az acr credential show --name %REGISTRY_NAME% --resource-group %RESOURCE_GROUP%
+acr_info=$(az acr show --name %REGISTRY_NAME% --resource-group %RESOURCE_GROUP% --query "{loginServer:loginServer}" --output tsv)
+docker login %LOGIN_SERVER% -u %REGISTRY_NAME% --password-stdin < acr-password.txt

@@ -1,0 +1,53 @@
+/* App.css */
+
+/* Center the container */
+.con {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Adjust as needed to center vertically */
+  text-align: center;
+  background-color: #f0f0f0; /* Background color */
+}
+
+/* Style for the header */
+h1 {
+  font-size: 24px;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Style for input fields */
+input {
+  width: 100px;
+  padding: 5px;
+  margin: 5px;
+}
+
+/* Style for the Calculate button */
+button {
+  background-color:black;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+/* Style for the result text */
+h4 {
+  font-size: 18px;
+  color: #333;
+  margin-top: 20px;
+}
+
+/* Style for the BMI text (Under Weight, Over Weight, Normal) */
+h1.BmiText {
+  font-size: 24px;
+  font-weight: bold;
+  color: #007bff;
+}

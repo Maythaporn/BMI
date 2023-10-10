@@ -1,0 +1,44 @@
+import React, { useRef, useState } from 'react';
+import './App.css';
+
+const BmiText = ({ bmi }) => {
+    if (bmi < 18.5) return <h1>Under Weight</h1>;
+    if (bmi > 30) return <h1>Over Weight</h1>;
+    return <h1>Normal</h1>;
+};
+
+function Bmi() {
+    const w_inputRef = useRef(null);
+    const h_inputRef = useRef(null);
+    const [Bmi, setBmi] = useState(0);
+
+    const calBmi = () => {
+        let w = w_inputRef.current.value;
+        let h = h_inputRef.current.value / 100;
+        setBmi(w / Math.pow(h, 2));
+    };
+
+    return (
+        <>
+           <div className='con'>
+           <h1>BMI Calculator</h1>
+            Weight: <input
+                type="text"
+                ref={w_inputRef}
+            /> kg.
+            <br />
+            Height: <input
+                type="text"
+                ref={h_inputRef}
+            /> cm.
+            <br />
+            <button onClick={() => calBmi()}>Calculate!</button>
+            <h4></h4>
+            Bmi value: {Bmi.toFixed(2)}
+            <BmiText bmi={Bmi} />
+           </div>
+        </>
+    );
+}
+
+export default Bmi;
