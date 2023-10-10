@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 
 import Bmi from './Bmi'; // Import the Bmi component we created
